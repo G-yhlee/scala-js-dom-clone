@@ -3988,7 +3988,7 @@ HTMLCanvasElement[JC] def getAttributeNode(name: String): Attr
 HTMLCanvasElement[JC] def getAttributeNodeNS(namespaceURI: String, localName: String): Attr
 HTMLCanvasElement[JC] def getBoundingClientRect(): DOMRect
 HTMLCanvasElement[JC] def getClientRects(): DOMRectList
-HTMLCanvasElement[JC] def getContext(contextId: String, args: js.Any*): js.Dynamic
+HTMLCanvasElement[JC] def getContext(contextType: String, contextAttributes: js.UndefOr[js.Dictionary[js.Any]]?): CanvasRenderingContext2D
 HTMLCanvasElement[JC] def getElementsByClassName(classNames: String): HTMLCollection[Element]
 HTMLCanvasElement[JC] def getElementsByTagName(name: String): HTMLCollection[Element]
 HTMLCanvasElement[JC] def getElementsByTagNameNS(namespaceURI: String, localName: String): HTMLCollection[Element]
