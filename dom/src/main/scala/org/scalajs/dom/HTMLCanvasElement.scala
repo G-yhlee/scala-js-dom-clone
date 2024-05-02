@@ -32,10 +32,19 @@ abstract class HTMLCanvasElement extends HTMLElement {
     */
   def toDataURL(`type`: String, args: js.Any*): String = js.native
 
-  /** Returns a drawing context on the canvas, or null if the context ID is not supported. A drawing context lets you
-    * draw on the canvas. Calling getContext with "2d" returns a CanvasRenderingContext2D object, whereas calling it
-    * with "experimental-webgl" (or "webgl") returns a WebGLRenderingContext object. This context is only available on
-    * browsers that implement WebGL.
+  /** Retrieves the drawing context for the canvas. The context is used for drawing graphics on the canvas.
+    *
+    * @param contextType
+    *   A string specifying the type of rendering context to be returned. Common values are "2d" for a 2D rendering
+    *   context and "webgl" for a WebGL rendering context.
+    * @param contextAttributes
+    *   An optional parameter that can be used to specify additional attributes for the context. This parameter can be
+    *   omitted or passed an arbitrary JavaScript value.
+    *
+    * @return
+    *   A `CanvasRenderingContext2D` object representing the 2D rendering context for the canvas. This object provides
+    *   methods and properties for drawing graphics on the canvas.
     */
-  def getContext(contextId: String, args: js.Any*): js.Dynamic = js.native
+  def getContext(contextType: String,
+      contextAttributes: js.UndefOr[js.Dictionary[js.Any]] = js.native): CanvasRenderingContext2D = js.native
 }
